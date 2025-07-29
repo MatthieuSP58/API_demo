@@ -3,186 +3,277 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Matthieu SAINT-PRIX - Développeur Web Cybersécurité</title>
+    <title>À propos de Matthieu SAINT-PRIX</title>
+    <!-- Chargement de Font Awesome pour l'icône LinkedIn -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
     <style>
-      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap");
-
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: "Poppins", sans-serif;
-      }
-
+      /* Styles généraux du corps de la page */
       body {
-        background-color: #f5f5f5;
-        color: #333;
-        line-height: 1.6;
-        padding: 20px;
+        font-family: "Arial", sans-serif;
         display: flex;
         justify-content: center;
         align-items: center;
-        min-height: 100vh;
+        min-height: 100vh; /* Prend au moins toute la hauteur de la fenêtre */
+        margin: 0;
+        background-color: #f4f4f4; /* Couleur de fond légère */
+        color: #333; /* Couleur de texte principale */
+        line-height: 1.6; /* Hauteur de ligne pour une meilleure lisibilité */
+        padding: 20px; /* Ajout d'un padding pour les petits écrans */
+        box-sizing: border-box; /* Inclut le padding dans la largeur/hauteur */
       }
 
+      /* Conteneur principal pour centrer le contenu */
       .container {
-        max-width: 800px;
-        background: white;
-        border-radius: 10px;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        max-width: 800px; /* Largeur maximale du conteneur */
+        width: 100%; /* S'adapte à la largeur disponible */
+        padding: 20px;
+        box-sizing: border-box;
+        text-align: center; /* Centre le texte à l'intérieur */
+      }
+
+      /* Carte de profil */
+      .profile-card {
+        background-color: #fff; /* Fond blanc pour la carte */
         padding: 30px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        border-radius: 10px; /* Coins arrondis */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre légère */
         text-align: center;
       }
 
+      /* Image de profil */
       .profile-img {
         width: 150px;
         height: 150px;
-        border-radius: 50%;
-        object-fit: cover;
-        border: 5px solid #2c3e50;
+        border-radius: 50%; /* Rend l'image circulaire */
+        object-fit: cover; /* Assure que l'image couvre bien la zone sans déformation */
         margin-bottom: 20px;
-        transition: transform 0.3s ease;
+        border: 4px solid #0077b5; /* Bordure colorée (couleur LinkedIn) */
       }
 
-      .profile-img:hover {
-        transform: scale(1.05);
-      }
-
+      /* Titre principal (nom) */
       h1 {
-        color: #2c3e50;
+        color: #0077b5; /* Couleur du titre (couleur LinkedIn) */
         margin-bottom: 10px;
-        font-size: 2rem;
       }
 
-      h2 {
-        color: #3498db;
+      /* Paragraphe de description */
+      p {
+        font-size: 1.1em; /* Taille de police légèrement plus grande */
         margin-bottom: 20px;
-        font-size: 1.5rem;
-        font-weight: 400;
       }
 
-      .typing {
-        position: relative;
-        display: inline-block;
+      /* Texte tapé (spécialisation) */
+      .typing-text {
+        font-weight: bold;
+        color: #e44d26; /* Couleur d'exemple pour la spécialisation (orange) */
       }
 
-      .typing::after {
-        content: "|";
-        position: absolute;
-        right: -5px;
-        animation: blink 0.7s infinite;
-        color: #3498db;
+      /* Curseur de l'animation de frappe */
+      .cursor {
+        display: inline-block; /* Pour qu'il soit sur la même ligne que le texte */
+        width: 3px;
+        height: 1.2em; /* Hauteur relative à la taille de la police */
+        background-color: #333; /* Couleur du curseur */
+        animation: blink 0.7s infinite; /* Animation de clignotement */
+        vertical-align: middle; /* Alignement vertical avec le texte */
       }
 
+      /* Animation de clignotement du curseur */
       @keyframes blink {
         0%,
         100% {
           opacity: 1;
-        }
+        } /* Visible */
         50% {
           opacity: 0;
-        }
+        } /* Invisible */
       }
 
-      p {
-        margin-bottom: 20px;
-        text-align: justify;
-        line-height: 1.8;
-      }
-
-      .linkedin-btn {
-        display: inline-flex;
-        align-items: center;
-        background-color: #0077b5;
-        color: white;
-        padding: 10px 20px;
-        border-radius: 5px;
-        text-decoration: none;
-        transition: background-color 0.3s ease;
+      /* Conteneur des liens sociaux */
+      .social-links {
         margin-top: 20px;
       }
 
+      /* Bouton LinkedIn */
+      .linkedin-btn {
+        display: inline-block; /* Pour pouvoir appliquer padding et margin */
+        background-color: #0077b5; /* Couleur de fond LinkedIn */
+        color: #fff; /* Texte blanc */
+        padding: 10px 20px;
+        border-radius: 5px; /* Coins arrondis */
+        text-decoration: none; /* Supprime le soulignement du lien */
+        font-size: 1em;
+        transition: background-color 0.3s ease; /* Transition douce au survol */
+      }
+
+      /* Effet au survol du bouton LinkedIn */
       .linkedin-btn:hover {
-        background-color: #005582;
+        background-color: #005582; /* Couleur plus foncée au survol */
       }
 
-      .linkedin-btn img {
-        width: 20px;
-        margin-right: 10px;
+      /* Icône LinkedIn à l'intérieur du bouton */
+      .linkedin-btn i {
+        margin-right: 8px; /* Espace entre l'icône et le texte */
       }
 
-      @keyframes typing {
-        from {
-          width: 0;
+      /* Styles pour la section de résumé professionnel */
+      .professional-summary-section {
+        margin-top: 30px;
+        padding-top: 20px;
+        border-top: 1px solid #eee;
+        text-align: left; /* Aligne le texte à gauche pour le résumé */
+      }
+
+      .professional-summary-section h2 {
+        text-align: center; /* Centre le titre de la section */
+        color: #0077b5;
+        margin-bottom: 15px;
+      }
+
+      .professional-summary-section p {
+        font-size: 1em;
+        color: #555;
+        padding: 0 10px; /* Un peu de padding pour le texte */
+      }
+
+      /* Styles pour la section compétences */
+      .skills-section {
+        margin-top: 30px;
+        padding-top: 20px;
+        border-top: 1px solid #eee;
+        text-align: left; /* Aligne le texte à gauche pour les compétences */
+      }
+
+      .skills-section h2 {
+        text-align: center; /* Centre le titre de la section */
+        color: #0077b5;
+        margin-bottom: 15px;
+      }
+
+      .skills-section ul {
+        list-style: none; /* Supprime les puces par défaut */
+        padding: 0;
+        display: flex; /* Utilise flexbox pour une disposition en ligne */
+        flex-wrap: wrap; /* Permet aux éléments de passer à la ligne */
+        justify-content: center; /* Centre les éléments dans la liste */
+        gap: 10px; /* Espace entre les éléments */
+      }
+
+      .skills-section li {
+        background-color: #e0f2f7; /* Couleur de fond pour chaque compétence */
+        color: #0077b5;
+        padding: 8px 15px;
+        border-radius: 20px; /* Coins très arrondis pour un look de "tag" */
+        font-size: 0.9em;
+        font-weight: bold;
+        white-space: nowrap; /* Empêche le texte de se couper */
+      }
+
+      /* Media queries pour la responsivité */
+      @media (max-width: 600px) {
+        .profile-card {
+          padding: 20px; /* Réduit le padding sur les petits écrans */
         }
-        to {
-          width: 100%;
-        }
-      }
 
-      .typing-text {
-        overflow: hidden;
-        white-space: nowrap;
-        animation: typing 3.5s steps(40, end),
-          blink-caret 0.75s step-end infinite;
-        display: inline-block;
-        vertical-align: bottom;
-      }
-
-      @keyframes blink-caret {
-        from,
-        to {
-          border-color: transparent;
+        h1 {
+          font-size: 1.8em; /* Réduit la taille du titre */
         }
-        50% {
-          border-color: #3498db;
+
+        p {
+          font-size: 1em; /* Réduit la taille du paragraphe */
+        }
+
+        .skills-section ul {
+          justify-content: flex-start; /* Aligne à gauche sur les petits écrans */
         }
       }
     </style>
   </head>
   <body>
     <div class="container">
-      <img
-        src="https://media.licdn.com/dms/image/v2/D4E03AQG4lqAYf08M7A/profile-displayphoto-shrink_400_400/B4EZSD84TLGYAg-/0/1737380563252?e=1756944000&v=beta&t=rO9Xd_eFNYp-YVMMG9-R7Vk2dhpZJLuS7wg5jsbhcgI"
-        alt="Matthieu SAINT-PRIX"
-        class="profile-img" />
-
-      <h1>Matthieu SAINT-PRIX</h1>
-
-      <h2>En reconversion professionnelle dans le développement web</h2>
-
-      <p>
-        Passionné par les technologies et la sécurité informatique, je me suis
-        engagé dans une reconversion professionnelle pour devenir un excellent
-        professionnel du métier
-        <span class="typing"
-          ><span class="typing-text">spécialisé Cybersécurité</span></span
-        >. Mon objectif est d'allier compétences en développement web et
-        expertise en sécurité pour créer des applications robustes et
-        sécurisées.
-      </p>
-
-      <p>
-        À travers cette formation, j'acquiers les connaissances techniques
-        nécessaires tout en développant une approche méthodique pour identifier
-        et résoudre les vulnérabilités potentielles. Je suis convaincu que la
-        cybersécurité est un enjeu majeur de notre époque numérique et je
-        souhaite contribuer activement à la protection des systèmes et des
-        données.
-      </p>
-
-      <a
-        href="https://www.linkedin.com/in/matthieu-saint-prix-49a88b112/"
-        class="linkedin-btn"
-        target="_blank">
+      <div class="profile-card">
+        <!-- Image de profil -->
         <img
-          src="https://cdn-icons-png.flaticon.com/512/174/174857.png"
-          alt="LinkedIn" />
-        Mon profil LinkedIn
-      </a>
+          src="https://media.licdn.com/dms/image/v2/D4E03AQG4lqAYf08M7A/profile-displayphoto-shrink_400_400/B4EZSD84TLGYAg-/0/1737380563252?e=1756944000&v=beta&t=rO9Xd_eFNYp-YVMMG9-R7Vk2dhpZJLuS7wg5jsbhcgI"
+          alt="Matthieu SAINT-PRIX"
+          class="profile-img" />
+        <h1>Matthieu SAINT-PRIX</h1>
+        <p>
+          Je suis en reconversion professionnelle dans le développement web pour
+          devenir un excellent professionnel du métier
+          <span class="typing-text"></span><span class="cursor"></span>
+        </p>
+        <div class="social-links">
+          <!-- Bouton LinkedIn -->
+          <a
+            href="https://www.linkedin.com/in/matthieu-saint-prix-49a88b112/"
+            target="_blank"
+            class="linkedin-btn">
+            <i class="fab fa-linkedin"></i> LinkedIn
+          </a>
+        </div>
+
+        <!-- Section pour le résumé professionnel -->
+        <div class="professional-summary-section">
+          <h2>Résumé Professionnel</h2>
+          <p>
+            En reconversion professionnelle stratégique, j'acquiers une
+            expertise solide en développement web, indispensable à ma
+            spécialisation pointue en cybersécurité. Mon ambition est de devenir
+            un professionnel d'excellence, reconnu pour sa maîtrise des enjeux
+            de sécurité informatique et sa capacité à innover dans la protection
+            des données et des systèmes.
+          </p>
+        </div>
+
+        <!-- Nouvelle section pour les compétences -->
+        <div class="skills-section">
+          <h2>Compétences Techniques</h2>
+          <ul>
+            <li>HTML5</li>
+            <li>CSS3</li>
+            <li>JavaScript</li>
+            <li>React</li>
+            <li>Node.js</li>
+            <li>Python</li>
+            <li>SQL</li>
+            <li>Git & GitHub</li>
+            <li>Principes de Cybersécurité</li>
+            <li>Développement Front-end</li>
+            <li>Développement Back-end</li>
+          </ul>
+        </div>
+      </div>
     </div>
+
+    <script>
+      // Sélection des éléments HTML pour l'animation de frappe
+      const textElement = document.querySelector(".typing-text");
+      const cursorElement = document.querySelector(".cursor");
+      // Texte à taper
+      const textToType = "spécialisé Cybersécurité";
+      let charIndex = 0; // Index du caractère actuel
+
+      /**
+       * Fonction pour simuler l'effet de frappe.
+       * Ajoute un caractère à la fois au texte.
+       */
+      function type() {
+        if (charIndex < textToType.length) {
+          textElement.textContent += textToType.charAt(charIndex);
+          charIndex++;
+          setTimeout(type, 100); // Appelle la fonction à nouveau après 100ms
+        } else {
+          cursorElement.style.display = "none"; // Cache le curseur une fois tout le texte tapé
+        }
+      }
+
+      // Lance l'animation une fois que le DOM est entièrement chargé
+      document.addEventListener("DOMContentLoaded", () => {
+        setTimeout(type, 1000); // Délai d'une seconde avant de commencer à taper
+      });
+    </script>
   </body>
 </html>
